@@ -1,0 +1,258 @@
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+code {
+	font-family: monospace;
+}
+
+h1 {
+	font-size: 72px;
+}
+
+.step {
+    width: 996px;
+    height: 500px;
+
+    opacity: 0.5;
+
+    -webkit-box-sizing: border-box;
+    box-sizing:         border-box;
+
+    font-family: 'Marker Felt', georgia, serif;
+
+    font-size: 48px;
+    -webkit-transition: opacity .7s ease-in;
+}
+.step.hidden,
+.isolated .step {
+	opacity: 0;
+}
+.group-yui-review-highlight #yui-ex-1-base {
+    opacity: .1;
+}
+.group-yui-reasons .yui-reasons,
+.step-thoughts-review .thought,
+.step-thoughts-review-2 .thought,
+.group-java-component .java-component,
+.group-html-component .html-component,
+.group-js-component .html-component,
+.group-css-component .html-component {
+    opacity: 0.5;
+}
+.group-component-overview #component-ex-base {
+    opacity: 0.15;
+}
+.step.active,
+.step-demo-1-review #demo-1,
+.group-yui-review #yui-ex-1-base,
+.group-yui-use #yui-ex-1-2,
+.group-yui-oj .yui-oj,
+.group-yui-loader .yui-loader,
+.group-yui-config .yui-config,
+.group-yui-try-add .yui-try-add,
+.step-thoughts-review #first-thought,
+.step-thoughts-review-2 #second-thought,
+.step-thoughts-review-2 #third-thought,
+.group-yui-loader-overview #yui-loader-overview,
+#component-ex-base.step.active,
+.group-java-component .component-image,
+.group-html-component .component-image,
+.group-js-component .component-image,
+.group-css-component .component-image,
+.showAfter  {
+	opacity: 1;
+}
+
+.group-yui-oj .active ~ .yui-oj,
+.group-yui-try-add .active ~ .yui-try-add,
+.group-yui-loader .active ~ .yui-loader,
+.group-java-component .java-component.active ~ .java-component, 
+.component-details.active ~ .component-details,
+.component-image.active ~ .component-details, 
+.step.active ~ .showAfter {
+    opacity: 0;
+}
+
+.noframe {
+    width: 0;
+    height: 0;
+}
+.step.step-code {
+    height: auto;
+}
+
+.demo {
+    text-align: center;
+    vertical-align: middle;
+    height: auto;
+}
+
+.center {
+	text-align: center;
+}
+
+.btn {
+    font-size: 78px;
+    color: #fff;
+    padding: 30px 40px;
+    background: -webkit-gradient(
+        linear, left top, left bottom, 
+        from(#6b6b6b),
+        to(#000000));
+    border-radius: 30px;
+    border: 1px solid #000000;
+    -webkit-box-shadow:
+        0px 1px 3px rgba(000,000,000,0.5),
+        inset 0px 0px 1px rgba(255,255,255,0.7);
+    text-shadow:
+        0px -1px 0px rgba(000,000,000,0.4),
+        0px 1px 0px rgba(255,255,255,0.3);
+    position: relative;
+    z-index: 20000;
+}
+.btn.btn-execute {
+    font-size: 36px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+
+.module-tip,
+.callback-tip {
+	position: absolute;
+	top: -80px;
+	left: 132px;
+	-webkit-transform: rotate(-5deg); 
+    z-index: 3;
+}
+    .callback-tip {
+    	left: 380px;
+    	-webkit-transform: rotate(7deg); 
+    }
+    .use {
+    	z-index: 2;
+    }
+    .highlight {
+    	position: absolute;
+    	top: 1px;
+    	left: 84px;
+    	width: 5.4em;
+    	height: 1.4em;
+    	-webkit-transform: rotate(1deg);
+    	background: #FF0;
+    	opacity: .3;
+    	z-index: 1;
+    }
+    .callback-highlight {
+    	-webkit-transform: rotate(-2deg);
+    	left: 370px;
+    	width: 3.4em;
+    }
+
+.CodeMirror {
+    font-size: 32px;
+}
+    .CodeMirror .CodeMirror-scroll {
+        height: auto;
+        overflow-y: hidden;
+        overflow-x: auto;
+        width: 100%;
+    }
+    .CodeMirror .selected {
+        background: #ff8;
+    }
+
+.object-graph {
+    position: absolute;
+    color: #fff;
+    background: -webkit-gradient(
+        linear, left top, left bottom, 
+        from(#6b6b6b),
+        to(#000000));
+    border-radius: 30px;
+    overflow: hidden;
+    border: 1px solid #000000;
+    -webkit-box-shadow:
+        0px 1px 3px rgba(000,000,000,0.5),
+        inset 0px 0px 1px rgba(255,255,255,0.7);
+    text-shadow:
+        0px -1px 0px rgba(000,000,000,0.4),
+        0px 1px 0px rgba(255,255,255,0.3);
+    display: inline-block;
+}
+    .object-graph li {
+        list-style: none;
+        border-bottom: 1px solid #fff;
+        padding: 20px 100px 20px 20px;
+    }
+    .object-graph li:last-child {
+        border-bottom: none;
+        border-radius: 0 0 30px 30px;
+    }
+
+    .object-yui {
+        -webkit-transform: rotate(-2deg);
+    }
+    .object-node {
+        left: 350px;
+        top: -90px;
+        -webkit-transform: rotate(4deg);
+    }
+    .object-node,
+    .object-prop-node {
+        background: -webkit-gradient(
+            linear, left top, left bottom, 
+            from(#003366),
+            to(#336699));
+    }
+    .object-event {
+        left: 700px;
+        top: 200px;
+        -webkit-transform: rotate(-3deg);
+    }
+    .object-event,
+    .object-prop-event {
+        background: -webkit-gradient(
+            linear, left top, left bottom, 
+            from(#330066),
+            to(#663399));
+    }
+    .object-yui-added {
+        top: -100px;
+        width: 600px;
+        left: 200px;
+        -webkit-transform: rotate(-1deg);
+    }
+
+.wicketComponentExample-js .CodeMirror {
+    font-size:.5em;
+}

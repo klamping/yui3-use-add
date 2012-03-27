@@ -5,59 +5,67 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1024" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>YUI3 use(), add() and Wicket</title>
+    <title>YUI 3 Integration with Wicket</title>
 
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
-
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
     <link href="css/screen.css" rel="stylesheet" />
     <link href="css/bubbles.css" rel="stylesheet" />
 
-<script src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
+    <script src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
 </head>
 <body>
 <div id="impress" class="impress-not-supported">
 
-<!--     <div class="fallback-message">
+<!--    <div class="fallback-message">
         <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
         <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser. Upcoming version 10 of Internet Explorer <i>should</i> also handle it.</p>
-    </div>
- -->
-    <div id="overview" class="step" data-x="0" data-y="0" data-scale="25" data-rotate="40">
-        <h1>YUI3 use(), add() and Wicket
+    </div>  -->
+
+    <div id="overview" class="step hidden" data-x="0" data-y="0" data-scale="40" data-rotate="0" data-z="100">
+        <img src="images/bg-tx.png" alt="" style="position: absolute; top: -300px;left: -250px;z-index:1;" width="1500" height="1000"/>
+
+        <img src="images/tech-x-logo.png" alt="" style="position: absolute; top: -300px;left: -300px;z-index:2;"/>
+
+        <div style="position: relative;top: 160px;left: 60px;z-index: 3">
+            <h1 style="color:#21c7ff">YUI 3 Integration with Wicket</h1>
+            <p style="color: #efefef;">Kevin Lamping, Daniel Semmens</p>
+        </div>
     </div>
 
-<!-- TODO rotate -->
-    <div id="yui-overview" class="step isolate" data-x="0" data-y="0" data-scale="2" data-group="yui-reasons">
+    <!-- YUI reasons section -->
+    <!-- TODO rotate -->
+    <div id="yui-overview" class="step" data-x="0" data-y="0" data-scale="2" data-group="yui-reasons">
         <img src="images/yuilogo.png" alt="YUI"/>
     </div>
 
-    <div id="yui-reason-1" class="step isolate" data-x="-469" data-y="-214" data-scale="1" data-rotate="-20" data-group="yui-reasons">
-        <span>Open source JavaScript and CSS framework</span>
+    <div id="yui-reason-1" class="step" data-x="-472" data-y="-218" data-scale="1" data-rotate="-22" data-group="yui-reasons">  <!-- who -->
+        <span>Yahoo! User Interface Library - Version 3</span>
     </div>
 
-    <div id="yui-reason-2" class="step isolate" data-x="465" data-y="-110" data-scale="1" data-rotate="22.5" data-group="yui-reasons">
-        <span>Community-oriented (twitter, forums, gallery)</span>
+    <div id="yui-reason-2" class="step" data-x="480" data-y="-100" data-scale="1" data-rotate="23" data-group="yui-reasons"> <!-- what -->
+        <span>Open-source JavaScript and CSS framework</span>
     </div>
 
-    <div id="yui-reason-3" class="step isolate" data-x="460" data-y="53" data-rotate="-206" data-group="yui-reasons">
-        <span>Modular Architecture (Scalable, fast, robust)</span>
+    <div id="yui-reason-3" class="step" data-x="460" data-y="53" data-rotate="-205.5" data-group="yui-reasons">    <!-- why -->
+        <span>Modular Architecture (Scalable, Fast, Robust)</span>
     </div>
 
-    <div id="yui-reason-4" class="step isolate" data-x="-493" data-y="209" data-rotate="-179" data-group="yui-reasons">
-        <span>USAA's JS framework</span>
+    <div id="yui-reason-4" class="step" data-x="-554" data-y="209" data-rotate="-179" data-group="yui-reasons">   <!-- how -->
+        <span>Active Community</span>
     </div>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.arctext.js"></script>
-<script>
-    $('#yui-reason-1 span').arctext({radius:1100});
-    $('#yui-reason-2 span').arctext({radius:2000});
-    $('#yui-reason-3 span').arctext({radius:2000});
-    $('#yui-reason-4 span').arctext({radius:1000});
-</script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.arctext.js"></script>
+    <script>
+        $('#yui-reason-1 span').arctext({radius:890});
+        $('#yui-reason-2 span').arctext({radius:2100});
+        $('#yui-reason-3 span').arctext({radius:1700});
+        $('#yui-reason-4 span').arctext({radius:1300});
+    </script>
+    <!-- End YUI reasons sections -->
 
-<!-- END YUI SECTION -->
 
+    <!-- Begin First Example -->
     <div id="demo-1" class="step demo isolate" data-scale="5" data-rotate="0" data-x="-5000" data-y="-1140">
         <button id="target-hello" class="btn">Hello TechX!</button>
     </div>
@@ -70,8 +78,8 @@
     <div id="yui-ex-1-base" class="step step-code yui-base" data-scale="5" data-rotate="0" data-x="-5000" data-y="500">
         <textarea id="yui-example-1">YUI().use('node', 'event', function (Y) {
     var hello = Y.one('#target-hello');
- 
-     // And we can listen for DOM events.
+     
+    // We can listen for DOM events
     hello.on('click', function (ev) {
         hello.set('text', 'You clicked me!');
     });
@@ -79,14 +87,15 @@
     </div>
 
     <script>
-    YUI().use('node', 'event', function (Y) {
-        var hello = Y.one('#target-hello');
-         // And we can listen for DOM events.
-        hello.on('click', function (ev) {
-            ev.stopPropagation();
-            hello.set('text', 'You clicked me!');
-        });
-    });
+        YUI().use('node', 'event', function (Y) {
+            // We can access DOM elements
+            var hello = Y.one('#target-hello');
+            // And we can listen for DOM events
+            hello.on('click', function (ev) {
+                ev.stopPropagation();
+                hello.set('text', 'You clicked me!');
+            });
+        });
     </script>
 
     <div id="demo-1-review" class="step noframe" data-scale="5" data-rotate="0" data-x="-5000" data-y="-1140"></div>
@@ -97,8 +106,8 @@
         <textarea class="code">YUI()</textarea>
     </div>
 
-    <div id="yui-ex-1-1" class="step hidden isolate" data-scale="5" data-rotate="0" data-x="-6463" data-y="1050">
-        <textarea id="yui-example-2">var techX = YUI(); // returns YUI object</textarea>
+    <div id="yui-ex-1-1" class="step hidden isolate" data-scale="5" data-rotate="0" data-x="-6963" data-y="1050">
+        <textarea id="yui-example-2">var YUInstance = YUI(); // returns YUI object</textarea>
     </div>
 
     <div class="step noframe" data-scale="5" data-rotate="0" data-x="-5000" data-y="1050" data-group="yui-review"></div>
@@ -115,15 +124,15 @@
     </div>
 
     <div id="yui-ex-1-2" class="step hidden isolate" data-scale="5" data-rotate="0" data-x="-4437" data-y="1050" data-group="yui-use">
-        <textarea class="code">use([1-n modules], callback)</textarea>
+        <textarea class="code">use: 1-n modules, callback</textarea>
     </div>
 
-    <div id="yui-ex-1-2-1" class="step hidden isolate" data-scale="5" data-rotate="0" data-x="-4450" data-y="1050" data-group="yui-use">
+    <div id="yui-ex-1-2-1" class="step hidden isolate" data-scale="5" data-rotate="0" data-x="-4437" data-y="1050" data-group="yui-use">
         <span class="module-tip">String<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</span>
         <div class="highlight module-highlight"></div>
     </div>
 
-    <div id="yui-ex-1-2-2" class="step hidden isolate" data-scale="5" data-rotate="0" data-x="-4450" data-y="1050" data-group="yui-use">
+    <div id="yui-ex-1-2-2" class="step hidden isolate" data-scale="5" data-rotate="0" data-x="-4437" data-y="1050" data-group="yui-use">
         <span class="callback-tip">Function<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(</span>
         <div class="highlight callback-highlight"></div>
     </div>
@@ -193,7 +202,7 @@
     <div class="step hidden" data-scale="5" data-rotate="0" data-x="-5000" data-y="1050" data-group="yui-review-highlight">
         <textarea class="code">          'node', 'event', function (Y) {
                 Y.one('#target-hello');
- 
+     
 
           on('click', function (ev) {
 
@@ -218,413 +227,338 @@
     <div class="step" data-scale="5" data-rotate="0" data-x="-5000" data-y="1050" data-group="yui-review" data-callback="highlight()">
     </div>
 
+    <!-- End First Example -->
 
-<!-- End of first example -->
 
-    <div id="first-thought" class="step demo isolate thought" data-scale="20" data-rotate="-270" data-x="-9000" data-y="-10000">
-        <blockquote class="rectangle-speech-border">
-            <p>What if I want to set my own text?</p>
-        </blockquote>
-    </div>
-    <div id="second-thought" class="step demo isolate thought" data-scale="20" data-rotate="-270" data-x="-14000" data-y="-10000">
-        <blockquote class="oval-thought-border">
-            <p>And really, I want to do this in Wicket</p>
-        </blockquote>
-    </div>
-    <div id="third-thought" class="step demo isolate thought" data-scale="20" data-rotate="-270" data-x="-20000" data-y="-10000">
-        <blockquote class="oval-speech-border">
-            <p>Plus, I don't want to write JavaScript</p>
-        </blockquote>
-    </div>
 
-    <div id="thoughts-review" class="step isolate" data-scale="22" data-rotate="-270" data-x="-14500" data-y="-10000">
-    </div>
+<!-- Begin Thoughts -->
+
+<div id="first-thought" class="step demo isolate thought" data-scale="20" data-rotate="-270" data-x="-9000" data-y="-10000">
+    <blockquote class="rectangle-speech-border">
+        <p>How can I create my own module?</p>
+    </blockquote>
+</div>
+<div id="second-thought" class="step demo isolate thought" data-scale="20" data-rotate="-270" data-x="-14000" data-y="-10000">
+    <blockquote class="oval-thought-border">
+        <p>How can I do this in Wicket?</p>
+    </blockquote>
+</div>
+<div id="third-thought" class="step demo isolate thought" data-scale="20" data-rotate="-270" data-x="-20000" data-y="-10000">
+    <blockquote class="oval-speech-border">
+        <p>I don't want to write JavaScript</p>
+    </blockquote>
+</div>
+
+<div id="thoughts-review" class="step isolate" data-scale="22" data-rotate="-270" data-x="-14500" data-y="-10000"></div>
 
 <!-- end of thoughts -->
 
-    <div class="step hidden" data-scale="1" data-rotate="-270" data-x="-15000" data-y="-10000" data-z="-1000">
-        <code>YUI.add()</code>
-    </div>
-    <div class="step hidden" data-scale="1" data-rotate="-270" data-x="-15000" data-y="-10000" data-z="-1000">
-        <code>YUI.add()</code> is used to create modules
-    </div>
-    <div class="step hidden" data-scale="1" data-rotate="-270" data-x="-15000" data-y="-10000" data-z="-1000">
-        <code>YUI.add()</code> is used to create modules
-        <textarea class="code" data-lineNumbers="true">YUI.add('myMod', function (Y) {
+
+<!-- Begin module writing -->
+
+
+<div class="step hidden" data-scale="20" data-rotate="-270" data-x="-9000" data-y="0" data-rotate-x="90">
+    <code>YUI.add()</code>
+</div>
+<div class="step hidden" data-scale="20" data-rotate="-270" data-x="-9000" data-y="0" data-rotate-x="90">
+    <code>YUI.add()</code> is used to create modules
+</div>
+<div class="step hidden" data-scale="20" data-rotate="-270" data-x="-9000" data-y="0" data-rotate-x="90">
+    <code>YUI.add()</code> is used to create modules
+    <textarea class="code" data-lineNumbers="true">YUI.add('myMod', function (Y) {
     Y.mod = "techX";
 });</textarea>
-    </div>
-    <div class="step hidden" data-scale="1" data-rotate="-270" data-x="-15000" data-y="-10000" data-z="-1000">
-        <code>YUI.add()</code> is used to create modules
-        <textarea class="code" data-lineNumbers="true">YUI.add('myMod', function (Y) {
+</div>
+<div class="step hidden" data-scale="20" data-rotate="-270" data-x="-9000" data-y="0" data-rotate-x="90">
+    <code>YUI.add()</code> is used to create modules
+    <textarea class="code" data-lineNumbers="true">YUI.add('myMod', function (Y) {
     Y.mod = "techX";
-});</textarea><br />
-        Modules are used in the <code>YUI().use</code> function
-    </div>
-    <div class="step hidden" data-scale="1" data-rotate="-270" data-x="-15000" data-y="-10000" data-z="-1000">
-        <code>YUI.add()</code> is used to create modules
-        <textarea class="code" data-lineNumbers="true">YUI.add('myMod', function (Y) {
+});</textarea>
+    Modules are used in the <code>use</code> function
+</div>
+<div class="step hidden" data-scale="20" data-rotate="-270" data-x="-9000" data-y="0" data-rotate-x="90">
+    <code>YUI.add()</code> is used to create modules
+    <textarea class="code" data-lineNumbers="true">YUI.add('myMod', function (Y) {
     Y.mod = "techX";
-});</textarea><br />
-        Modules are used in the <code>YUI().use</code> function
-        <textarea class="code" data-lineNumbers="true">YUI().use('myMod', function (Y) {
+});</textarea>
+    Modules are used in the <code>use</code> function
+    <textarea class="code" data-lineNumbers="true">YUI().use('myMod', function (Y) {
     alert(Y.mod); // alerts 'techX'
 });</textarea>
-    </div>
+</div>
 
-    <div class="step hidden" data-scale="1" data-rotate="-270" data-x="-15000" data-y="-10000" data-z="1" data-group="yui-try-add">
-        <h1>Let's try it!</h1>
-    </div>
-    <div class="step hidden" data-scale="1" data-rotate="-270" data-x="-15100" data-y="-10000" data-z="1" data-group="yui-try-add">
-        <textarea class="code" data-lineNumbers="true" data-runnable="true">YUI.add('myMod', function (Y) {
+<!-- End module writing -->
+
+<div class="step hidden" data-scale="10" data-rotate="-270" data-x="-9970" data-y="2000" data-group="yui-try-add" data-rotate-x="180">
+    <h1>Let's try it!</h1>
+</div>
+<div class="step hidden" data-scale="10" data-rotate="-270" data-x="-11000" data-y="2000" data-group="yui-try-add" data-rotate-x="180">
+    <textarea class="code" data-lineNumbers="true" data-runnable="true">YUI.add('myMod', function (Y) {
     Y.mod = "techX";
 });
 YUI().use('myMod', function (Y) {
     alert(Y.mod); // alerts 'techX'
 });</textarea>
-    </div>
-
-<!--
-    <div class="step" data-scale="2" data-rotate="-360" data-x="-14300" data-y="-8500" data-z="-1000">
-    </div>
-    <div class="step demo" data-scale="1" data-rotate="-360" data-x="-15100" data-y="-9000" data-z="-2500">
-        <div class="dia-useStatement">Module</div>
-        <img src="images/coded_icon_set/512x512/package_gear_512.png" alt="" />
-    </div>
-
-    <div class="step demo" data-scale="1" data-rotate="-360" data-x="-14500" data-y="-9000" data-z="-2500">
-        <div class="dia-useStatement">YUI.add()</div>
-        <img src="images/coded_icon_set/512x512/package_code_512.png" alt="" />
-    </div>
-
-    <div id="yui-loader-overview" class="step demo" data-scale="1" data-rotate="-360" data-x="-13900" data-y="-9000" data-z="-2500" data-group="yui-loader-overview">
-        <div class="dia-useStatement">YUI Loader</div>
-        <img src="images/coded_icon_set/512x512/package_download_512.png" alt="" />
-    </div>
-
-    <div class="step hidden" data-scale="1" data-rotate="-360" data-x="-13800" data-y="-9000" data-z="-3500" data-group="yui-loader">
-        <div class="object-graph">
-            <ol>
-                <li>[moduleInfo]</li>
-                <li>'Node'</li>
-                <li>'Event'</li>
-                <li>'DataTable'</li>
-                <li>...</li>
-            </ol>
-        </div>
-    </div>
-
-    <div class="step hidden demo" data-scale="1" data-rotate="-360" data-x="-13800" data-y="-9000" data-z="-3500" data-group="yui-loader">
-        <p style="position: absolute; left: 450px; top:40px;">addModule();</p>
-        <img src="images/coded_icon_set/512x512/bookmark_512.png" alt="" style="margin:50px 0 0 250px;"/>
-    </div>
-
-    <div class="step demo" data-scale="1" data-rotate="-360" data-x="-13900" data-y="-9000" data-z="-2500" data-group="yui-loader-overview"></div>
-
-
-    <div class="step demo" data-scale="1" data-rotate="-360" data-x="-15600" data-y="-8000" data-z="-2500">
-        <div class="dia-useStatement">Initialization Code</div>
-        <img src="images/coded_icon_set/512x512/page_javascript_512.png" alt="" />
-    </div>
-
-    <div class="step demo" data-scale="1" data-rotate="-360" data-x="-15000" data-y="-8000" data-z="-2500">
-        <div class="dia-useStatement">YUI().use()</div>
-        <img src="images/coded_icon_set/512x512/package_code_512.png" alt="" />
-    </div>
-
-    <div class="step demo" data-scale="1" data-rotate="-360" data-x="-14400" data-y="-8100" data-z="-2500">
-        ['node', 'event', 'myMod']
-    </div>
-
-    <div class="step" data-scale="1" data-rotate="-360" data-x="-14500" data-y="-9000" data-z="-2000">
-    </div>
-
-    <div class="step demo" data-scale="1" data-rotate="-360" data-x="-15600" data-y="-8000" data-z="-2500">
-    </div>
-
-    <div class="step" data-scale="1" data-rotate="-360" data-x="-14300" data-y="-8500" data-z="-1000">
-    </div>
-
-    <div class="step step-code" data-scale="1" data-rotate="-270" data-x="-15100" data-y="-10000" data-z="1" data-group="yui-try-add">
-    </div>
+</div>
 
 <!-- Start "Loading from a different file" -->
-    <div class="step" data-scale="1" data-rotate="-180" data-x="-20100" data-y="-20000">
-        <p>greeter.js</p>
-        <textarea class="code" data-lineNumbers="true">YUI.add('greeter', function (Y) {
+<div class="step" data-scale="2" data-rotate="-180" data-x="-10070" data-y="-1800">
+    <p>greeter.js</p>
+    <textarea class="code" data-lineNumbers="true">YUI.add('greeter', function (Y) {
     Y.greet = function (cfg) {
         alert("Hello " + cfg.name);
     };
 });</textarea>
-    </div>
+</div>
 
-    <div class="step" data-scale="1" data-rotate="-180" data-x="-20100" data-y="-20300" data-group="yui-config" style="z-index:5000">
-        <p>app.html</p>
-        <textarea class="code" data-lineNumbers="true" data-runnable="true">YUI().use('greeter', function (Y) {
-        Y.greet({
-            name: 'World'
-        });
+<div class="step" data-scale="2" data-rotate="-180" data-x="-10070" data-y="-2500" data-group="yui-config" style="z-index:50000" data-z="10">
+    <p>app.html</p>
+    <textarea class="code" data-lineNumbers="true" data-runnable="true">YUI().use('greeter', function (Y) {
+    Y.greet({
+        name: 'World'
+    });
 });</textarea>
-    </div>
+</div>
 
-    <div class="step" data-scale="1" data-rotate="-180" data-x="-21000" data-y="-20300" data-group="yui-config" style="z-index:5000">
-        <textarea class="code">{
+<div class="step" data-scale="2" data-rotate="-180" data-x="-12000" data-y="-2500" data-group="yui-config" style="z-index:50000">
+    <textarea class="code">{
     groups: {
         custom: {
             modules:  {
                 'greeter': {
-                    fullpath: 'greeter.js'
+                     fullpath: 'greeter.js'
                 }
             }
         }
     }
 }</textarea>
-    </div>
+</div>
 
-    <div class="step step-code" data-scale="1" data-rotate="-180" data-x="-20100" data-y="-20400" data-group="yui-config"></div>
+<div class="step step-code" data-scale="2" data-rotate="-180" data-x="-10070" data-y="-2700" data-group="yui-config"></div>
 
-    <div id="thoughts-review-2" class="step isolate step-code" data-scale="22" data-rotate="-270" data-x="-14500" data-y="-10000">
-    </div>
+<div id="thoughts-review-2" class="step isolate step-code" data-scale="22" data-rotate="-270" data-x="-14500" data-y="-10000"></div>
+
+
+
+
+<!-- Begin Wicket Section -->
+
 <!-- BEGIN WICKET SECTION -->
-    <div class="step demo isolate" data-scale="1" data-rotate="-90" data-x="-20700" data-y="-20800" data-group="wicket">
-        <img src="images/apache-wicket.png" style="height:500px; width:500px;"/>
+<div class="step demo isolate" data-scale="1" data-rotate="-90" data-x="-20700" data-y="-20800" data-group="wicket">
+    <img src="images/apache-wicket.png" style="height:500px; width:500px;"/>
+</div>
+<div class="step center hidden" data-scale="1" data-rotate="-90" data-x="-20600" data-y="-20800" data-group="wicket">
+    <p style="padding-top:480px; font-weight:bold;font-size:1.4em;">Makes Building Applications Easy!</p>
+</div>
+<div id="component-ex-base" class="step demo isolate hidden" data-scale="13" data-rotate="0" data-x="-19700" data-y="-20800" data-group="component-overview">
+    <img src="images/components/whole_page.png" style="height:102%; width:102%;" />
+</div>
+<div class="step demo isolate hidden" data-scale="3.6" data-rotate="0" data-x="-20107" data-y="-19420" data-group="component-overview">
+    <img src="images/components/component1.png" style="width:110.5%;" />
+</div>
+<div class="step demo isolate hidden" data-scale="6" data-rotate="0" data-x="-15485" data-y="-25280" data-group="component-overview">
+    <img src="images/components/component2.png" style="width:105.7%;" />
+</div>
+<div class="step demo isolate hidden" data-scale="8" data-rotate="0" data-x="-16200" data-y="-23500" data-group="component-overview">
+    <img src="images/components/component3.png" style="width:85%;" />
+</div>
+<div class="step demo isolate hidden" data-scale="13" data-rotate="0" data-x="-19700" data-y="-20800" data-group="component-overview-final">
+    <img src="images/components/whole_page_edit.png" style="height:102%; width:102%;" />
+</div>
+<div class="step center" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28000" data-group="component-details">
+    <p style="font-weight:bold; font-size:1.2em;">So, what exactly is a Component?</p>
+</div>
+<div class="step component-image" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="java-component">
+    <div style="height:340px;">
+        <img src="images/components/java.png" style="padding-left:150px; width:125px;" />
+        <img src="images/components/html.png" style="padding-left:400px; width:125px;" />
     </div>
-    <div class="step center hidden" data-scale="1" data-rotate="-90" data-x="-20600" data-y="-20800" data-group="wicket">
-        <p style="padding-top:480px; font-weight:bold;font-size:1.4em;">Makes Building Applications Easy!</p>
+    <div>
+        <img src="images/components/js.png" style="padding-left:150px; width:125px;" />
+        <img src="images/components/css.png" style="padding-left:400px; width:125px;" />
     </div>
-    <div id="component-ex-base" class="step demo isolate hidden" data-scale="13" data-rotate="0" data-x="-19700" data-y="-20800" data-group="component-overview">
-        <img src="images/components/whole_page.png" style="height:102%; width:102%;" />
+</div>
+<div class="step component-details" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="java-component">
+    <ul style="padding:150px 0 0 110px; font-size:.5em;">
+        <li>Server-Side Logic</li>
+    </ul>
+</div>
+<div class="step component-details" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="java-component">
+    <ul style="padding:150px 0 0 110px; font-size:.5em;">
+        <li style="visibility:hidden;">Server-Side Logic</li>
+        <li>Integration w/ Data Tier
+            <ul style="padding-left:30px;">
+                <li>Conversion, Validation, etc</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="step component-details" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="html-component">
+    <ul style="padding:150px 0 0 110px; font-size:.5em;">
+        <li style="visibility:hidden;">Server-Side Logic</li>
+        <li style="visibility:hidden;">Integration w/ Data Tier
+            <ul style="padding-left:30px;">
+                <li>Conversion, Validation, etc</li>
+            </ul>
+        </li>
+        <li>Ties Everything Together</li>
+    </ul>
+</div>
+<div class="step component-details" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="html-component">
+    <ul style="padding:150px 0 0 620px; font-size:.5em;">
+        <li>Structure of the Component</li>
+    </ul>
+</div>
+<div class="step component-details" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="html-component">
+    <ul style="padding:150px 0 0 620px; font-size:.5em;">
+        <li style="visibility:hidden;">Structure of the Component</li>
+        <li>Class Names</li>
+    </ul>
+</div>
+<div class="step component-details" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="html-component">
+    <ul style="padding:490px 0 0 110px; font-size:.5em;">
+        <li>Client-Side Logic</li>
+    </ul>
+</div>
+<div class="step component-details" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="html-component">
+    <ul style="padding:490px 0 0 110px; font-size:.5em;">
+        <li style="visibility:hidden;">Server-Side Logic</li>
+        <li>Rich Interaction... Flare</li>
+    </ul>
+</div>
+<div class="step component-details" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="html-component">
+    <ul style="padding:490px 0 0 620px; font-size:.5em;">
+        <li>Styles</li>
+    </ul>
+</div>
+
+<div class="step showAfter" data-scale="1" data-rotate="-180" data-x="-21700" data-y="-28120" data-callback="pres.next();">
+    <div style="border-right:1px solid gray; width: 950px;">
+        <div style="padding:0 0 75px 250px;"><img src="images/yuilogo.png" style="width:200px;" /></div>
+        <p>greeter.js</p>
+        <textarea id="yuiIntegrationExampleJs" data-lineNumbers="true">YUI.add('greeter', function (Y) {
+            Y.greet = function (cfg) {
+            alert("Hello " + cfg.name);
+            };
+            });</textarea>
+        <p>greeter.css</p>
+        <textarea id="yuiIntegrationExampleCss" data-lineNumbers="true" data-runnable="true">...test</textarea>
+        <p>app.html</p>
+        <textarea id="yuiIntegrationExampleHtml" data-lineNumbers="true" data-runnable="true"><button></button>
+            &lt;script&gt;
+            YUI({
+            groups: {
+            custom: {
+            modules:  {
+            'greeter': {
+            fullpath: 'greeter.js'
+            }
+            }
+            }
+            }
+            }).use('greeter', function (Y) {
+            Y.greet({
+            name: 'World'
+            });
+            })
+            &lt;/script&gt;</textarea>
     </div>
-    <div class="step demo isolate hidden" data-scale="3.6" data-rotate="0" data-x="-20107" data-y="-19420" data-group="component-overview">
-        <img src="images/components/component1.png" style="width:110.5%;" />
-    </div>
-    <div class="step demo isolate hidden" data-scale="6" data-rotate="0" data-x="-15485" data-y="-25280" data-group="component-overview">
-        <img src="images/components/component2.png" style="width:105.7%;" />
-    </div>
-    <div class="step demo isolate hidden" data-scale="8" data-rotate="0" data-x="-16200" data-y="-23500" data-group="component-overview">
-        <img src="images/components/component3.png" style="width:85%;" />
-    </div>
-    <div class="step demo isolate hidden" data-scale="13" data-rotate="0" data-x="-19700" data-y="-20800" data-group="component-overview-final">
-        <img src="images/components/whole_page_edit.png" style="height:102%; width:102%;" />
-    </div>
-    <div class="step center" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28000" data-group="component-details">
-        <p style="font-weight:bold; font-size:1.2em;">So, what exactly is a Component?</p>
-    </div>
-    <div class="step component-image" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="java-component">
-        <div style="height:340px;">
-            <img src="images/components/java.png" style="padding-left:150px; width:125px;" />
-            <img src="images/components/html.png" style="padding-left:400px; width:125px;" />
+</div>
+<div class="step showAfter" data-scale="1.1" data-rotate="-180" data-x="-22710" data-y="-28120" data-callback="pres.next();">
+    <div class="wicketComponentExample-wrapper" style="width:1200px;">
+        <div style="padding:0 0 35px 250px; font-weight:bold; font-size:1.4em;">
+            <div style="display:inline-block;"><img src="images/yuilogo.png" style="width:200px;" /></div>
+            in
+            <div style="display:inline-block;"><img src="images/apache_wicket_2.png" style="width:250px;" /></div>
+        </div>
+        <div style="height:300px;">
+            <div style="display:inline-block; vertical-align:top; width:594px;">
+                <img src="images/components/java.png" style="padding-left:234px; width:125px;" />
+                <textarea id="wicketIntegrationExampleJava" style="display:none;"></textarea>
+            </div>
+            <div style="display:inline-block; vertical-align:top; width:594px;">
+                <img src="images/components/html.png" style="padding-left:234px; width:125px;" />
+                <textarea id="wicketIntegrationExampleHtml" style="display:none;"></textarea>
+            </div>
+        </div>
+        <div style="height:300px;">
+            <div class="wicketComponentExample-js" style="display:inline-block; vertical-align:top; width:594px;">
+                <img src="images/components/js.png" style="padding-left:234px; width:125px;" />
+                <textarea id="wicketIntegrationExampleJs" style="display:none;"></textarea>
+            </div>
+            <div style="display:inline-block; vertical-align:top; width:594px;">
+                <img src="images/components/css.png" style="padding-left:234px; width:125px;" />
+                <textarea id="wicketIntegrationExampleCss" style="display:none;"></textarea>
+            </div>
         </div>
         <div>
-            <img src="images/components/js.png" style="padding-left:150px; width:125px;" />
-            <img src="images/components/css.png" style="padding-left:400px; width:125px;" />
-        </div>
-    </div>
-    <div class="step component-details" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="java-component">
-        <ul style="padding:150px 0 0 110px; font-size:.5em;">
-            <li>Server-Side Logic</li>
-        </ul>
-    </div>
-    <div class="step component-details" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="java-component">
-        <ul style="padding:150px 0 0 110px; font-size:.5em;">
-            <li style="visibility:hidden;">Server-Side Logic</li>
-            <li>Integration w/ Data Tier
-                <ul style="padding-left:30px;">
-                    <li>Conversion, Validation, etc</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-    <div class="step component-details" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="html-component">
-        <ul style="padding:150px 0 0 110px; font-size:.5em;">
-            <li style="visibility:hidden;">Server-Side Logic</li>
-            <li style="visibility:hidden;">Integration w/ Data Tier
-                <ul style="padding-left:30px;">
-                    <li>Conversion, Validation, etc</li>
-                </ul>
-            </li>
-            <li>Ties Everything Together</li>
-        </ul>
-    </div>
-    <div class="step component-details" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="html-component">
-        <ul style="padding:150px 0 0 620px; font-size:.5em;">
-            <li>Structure of the Component</li>
-        </ul>
-    </div>
-    <div class="step component-details" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="html-component">
-        <ul style="padding:150px 0 0 620px; font-size:.5em;">
-            <li style="visibility:hidden;">Structure of the Component</li>
-            <li>Class Names</li>
-        </ul>
-    </div>
-    <div class="step component-details" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="html-component">
-        <ul style="padding:490px 0 0 110px; font-size:.5em;">
-            <li>Client-Side Logic</li>
-        </ul>
-    </div>
-    <div class="step component-details" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="html-component">
-        <ul style="padding:490px 0 0 110px; font-size:.5em;">
-            <li style="visibility:hidden;">Server-Side Logic</li>
-            <li>Rich Interaction... Flare</li>
-        </ul>
-    </div>
-    <div class="step component-details" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="html-component">
-        <ul style="padding:490px 0 0 620px; font-size:.5em;">
-            <li>Styles</li>
-        </ul>
-    </div>
-
-    <div class="step showAfter" data-scale="1" data-rotate="-180" data-x="-21700" data-y="-28120" data-callback="pres.next();">
-        <div style="border-right:1px solid gray; width: 950px;">
-            <div style="padding:0 0 75px 250px;"><img src="images/yuilogo.png" style="width:200px;" /></div>
-            <p>greeter.js</p>
-            <textarea id="yuiIntegrationExampleJs" data-lineNumbers="true">YUI.add('greeter', function (Y) {
-    Y.greet = function (cfg) {
-        alert("Hello " + cfg.name);
-    };
-});</textarea>
-            <p>greeter.css</p>
-            <textarea id="yuiIntegrationExampleCss" data-lineNumbers="true" data-runnable="true">...test</textarea>
-            <p>app.html</p>
-            <textarea id="yuiIntegrationExampleHtml" data-lineNumbers="true" data-runnable="true"><button></button>
-&lt;script&gt;
-    YUI({
-        groups: {
-            custom: {
-                modules:  {
-                    'greeter': {
-                        fullpath: 'greeter.js'
-                    }
-                }
-            }
-        }
-    }).use('greeter', function (Y) {
-        Y.greet({
-            name: 'World'
-        });
-    })
-&lt;/script&gt;</textarea>
-        </div>
-    </div>
-    <div class="step showAfter" data-scale="1.1" data-rotate="-180" data-x="-22710" data-y="-28120" data-callback="pres.next();">
-        <div class="wicketComponentExample-wrapper" style="width:1200px;">
-            <div style="padding:0 0 35px 250px; font-weight:bold; font-size:1.4em;">
-                <div style="display:inline-block;"><img src="images/yuilogo.png" style="width:200px;" /></div>
-                in
-                <div style="display:inline-block;"><img src="images/apache_wicket_2.png" style="width:250px;" /></div>
+            <div style="display:inline-block; vertical-align:top; width:594px;">
+                <img src="images/components/xml.png" style="padding-left:234px; width:125px;" />
+                <textarea id="wicketIntegrationExampleXml" style="display:none;"></textarea>
             </div>
-            <div style="height:300px;">
-                <div style="display:inline-block; vertical-align:top; width:594px;">
-                    <img src="images/components/java.png" style="padding-left:234px; width:125px;" />
-                    <textarea id="wicketIntegrationExampleJava" style="display:none;"></textarea>
-                </div>
-                <div style="display:inline-block; vertical-align:top; width:594px;">
-                    <img src="images/components/html.png" style="padding-left:234px; width:125px;" />
-                    <textarea id="wicketIntegrationExampleHtml" style="display:none;"></textarea>
-                </div>
-            </div>
-            <div style="height:300px;">
-                <div class="wicketComponentExample-js" style="display:inline-block; vertical-align:top; width:594px;">
-                    <img src="images/components/js.png" style="padding-left:234px; width:125px;" />
-                    <textarea id="wicketIntegrationExampleJs" style="display:none;"></textarea>
-                </div>
-                <div style="display:inline-block; vertical-align:top; width:594px;">
-                    <img src="images/components/css.png" style="padding-left:234px; width:125px;" />
-                    <textarea id="wicketIntegrationExampleCss" style="display:none;"></textarea>
-                </div>
-            </div>
-            <div>
-                <div style="display:inline-block; vertical-align:top; width:594px;">
-                    <img src="images/components/xml.png" style="padding-left:234px; width:125px;" />
-                    <textarea id="wicketIntegrationExampleXml" style="display:none;"></textarea>
-                </div>
-                <div style="display:inline-block; vertical-align:top; margin-top:-1px; height:448px; width:593px; border-top:1px solid gray; border-left:1px solid gray;">
-                    <img src="images/components/infra.png" style="padding-left:234px; width:125px;" />
-                    <textarea id="wicketIntegrationExampleInfra" style="display:none;"></textarea>
-                </div>
+            <div style="display:inline-block; vertical-align:top; margin-top:-1px; height:448px; width:593px; border-top:1px solid gray; border-left:1px solid gray;">
+                <img src="images/components/infra.png" style="padding-left:234px; width:125px;" />
+                <textarea id="wicketIntegrationExampleInfra" style="display:none;"></textarea>
             </div>
         </div>
     </div>
-    <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500"></div>
-    <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="highlight(cmYuiIntegrationExampleJs, {line:0,ch:0},{line:4,ch:2});"></div>
-    <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="yuiIntegrationExampleJsMove()"></div>
-    <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="highlight(cmYuiIntegrationExampleCss, {line:0,ch:0},{line:0,ch:0});"></div>
-    <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="yuiIntegrationExampleCssMove()"></div>
-    <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="highlight(cmYuiIntegrationExampleHtml, {line:0,ch:0},{line:0,ch:0});"></div>
-    <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="yuiIntegrationExampleHtmlMove()"></div>
-    <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="highlight(cmYuiIntegrationExampleHtml, {line:13,ch:7},{line:15,ch:10});"></div>
-    <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="yuiIntegrationExampleJavaMove()"></div>
-    <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="highlight(cmYuiIntegrationExampleHtml, {line:5,ch:16},{line:9,ch:0});"></div>
-    <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="yuiIntegrationExampleXmlMove()"></div>
-    <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="highlight(cmYuiIntegrationExampleHtml, {line:2,ch:4},{line:4,ch:0});
+</div>
+<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500"></div>
+<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="highlight(cmYuiIntegrationExampleJs, {line:0,ch:0},{line:4,ch:2});"></div>
+<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="yuiIntegrationExampleJsMove()"></div>
+<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="highlight(cmYuiIntegrationExampleCss, {line:0,ch:0},{line:0,ch:0});"></div>
+<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="yuiIntegrationExampleCssMove()"></div>
+<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="highlight(cmYuiIntegrationExampleHtml, {line:0,ch:0},{line:0,ch:0});"></div>
+<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="yuiIntegrationExampleHtmlMove()"></div>
+<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="highlight(cmYuiIntegrationExampleHtml, {line:13,ch:7},{line:15,ch:10});"></div>
+<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="yuiIntegrationExampleJavaMove()"></div>
+<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="highlight(cmYuiIntegrationExampleHtml, {line:5,ch:16},{line:9,ch:0});"></div>
+<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="yuiIntegrationExampleXmlMove()"></div>
+<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="highlight(cmYuiIntegrationExampleHtml, {line:2,ch:4},{line:4,ch:0});
         highlight(cmYuiIntegrationExampleHtml, {line:10,ch:0},{line:12,ch:0}, true); highlight(cmYuiIntegrationExampleHtml, {line:16,ch:0},{line:16,ch:0}, true);"></div>
-    <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="yuiIntegrationExampleInfrastructureMove()"></div>
-    <div class="step demo hidden" data-scale=".05" data-rotate="-180" data-x="-22500" data-y="-28180">
+<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="yuiIntegrationExampleInfrastructureMove()"></div>
+<div class="step demo hidden" data-scale=".05" data-rotate="-180" data-x="-22500" data-y="-28180">
 
-    </div>
-    <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500"></div>
-    <div class="step demo hidden" data-scale=".03" data-rotate="-180" data-x="-22500" data-y="-28850">
+</div>
+<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500"></div>
+<div class="step demo hidden" data-scale=".03" data-rotate="-180" data-x="-22500" data-y="-28850">
 
-    </div>
-    <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500"></div>
+</div>
+<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500"></div>
 
 
 <!-- BEGIN REFERENCE SECTION -->
-    <div class="step isolate" data-scale="1" data-rotate="0" data-x="-22260" data-y="-28500">
-        <h1>References</h1>
-    </div>
-
-    <!--
-
-        So to make a summary of all the possible attributes used to position presentation steps, we have:
-
-        * `data-x`, `data-y`, `data-z` -- they define the position of **the center** of step element on
-            the canvas in pixels; their default value is 0;
-        * `data-rotate-x`, `data-rotate-y`, 'data-rotate-z`, `data-rotate` -- they define the rotation of
-            the element around given axis in degrees; their default value is 0; `data-rotate` and `data-rotate-z`
-            are exactly the same;
-        * `data-scale` -- defines the scale of step element; default value is 1
-
-    -->
-    <!-- TODO place this on top of config
-    <div class="step" data-scale="5" data-rotate="0" data-x="-5000" data-y="1050" data-group="yui-review">
-        X
-    </div>-->
-
+<div class="step isolate" data-scale="1" data-rotate="0" data-x="-22260" data-y="-28500">
+    <h1>References</h1>
 </div>
 
+
+
+
+
+
+<!-- Final Slide -->
+
+<div class="step hidden" data-x="0" data-y="0" data-scale="40" data-rotate-x="90">
+    <img src="images/bg-tx.png" alt="" style="position: absolute; top: -300px;left: -250px;z-index:1;" width="1500" height="1000"/>
+
+    <img src="images/tech-x-logo.png" alt="" style="position: absolute; top: -300px;left:-300px;z-index:2;"/>
+
+    <div style="position: relative;top: 160px;left: 60px;z-index: 3">
+        <h1 style="color:#21c7ff">Thank You!</h1>
+        <p style="color: #efefef;">For more information, visit the TechX<br />conference website at http://go/techx</p>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="js/cm2/lib/codemirror.css">
+<script src="js/cm2/lib/codemirror.js"></script>
+<script src="js/cm2/mode/xml/xml.js"></script>
+<script src="js/cm2/mode/javascript/javascript.js"></script>
+<script src="js/cm2/mode/htmlmixed/htmlmixed.js"></script>
+<script src="js/cm2/mode/clike/clike.js"></script>
+
 <script src="js/impress.js"></script>
-
-<!--
-
-    The `impress()` function also gives you access to API to control the presentation.
-
-    Just store the result of the call:
-
-        var api = impress();
-
-    and you will get three functions you can call:
-
-        `api.next()` - moves to next step of the presentation,
-        `api.prev()` - moves to previous step of the presentation
-        `api.goto( stepElement ) - moves the presentation to given step element (the DOM element of the step).
-
-    You can also simply call `impress()` again to get the API, so `impress().next()` is also allowed.
-    Don't worry, it wont initialize the presentation again.
-
-    For some example uses of this API check the last part of the source of impress.js where the API
-    is used in event handlers.
-
--->
-
-<link rel="stylesheet" href="js/codemirror2/lib/codemirror.css">
-<script src="js/codemirror2/lib/codemirror.js"></script>
-<script src="js/codemirror2/mode/xml/xml.js"></script>
-<script src="js/codemirror2/mode/javascript/javascript.js"></script>
-<script src="js/codemirror2/mode/htmlmixed/htmlmixed.js"></script>
-<script src="js/codemirror2/mode/clike/clike.js"></script>
-
-
 <script>
     CodeMirror.fromTextArea(document.getElementById('yui-example-1-html'), {
         mode: "text/html"});
@@ -653,7 +587,7 @@ YUI().use('myMod', function (Y) {
             ev.stopPropagation();
         },
         mode: "javascript"
-      });
+    });
 
     $('.code').each(function(i){
         var ln = this.dataset.linenumbers || false;
@@ -787,5 +721,8 @@ YUI().use('myMod', function (Y) {
     var pres = impress();
 </script>
 
+
+
+</div>
 </body>
 </html>

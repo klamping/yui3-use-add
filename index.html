@@ -374,8 +374,9 @@ YUI().use('myMod', function (Y) {
         <img src="images/components/html.png" style="padding-left:400px; width:125px;" />
     </div>
     <div>
-        <img src="images/components/js.png" style="padding-left:150px; width:125px;" />
-        <img src="images/components/css.png" style="padding-left:400px; width:125px;" />
+        <img src="images/components/js.png" style="padding-left:60px; width:125px;" />
+        <img src="images/components/css.png" style="padding-left:210px; width:125px;" />
+        <img src="images/components/xml.png" style="padding-left:210px; width:125px;" />
     </div>
 </div>
 <div class="step component-details" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="java-component">
@@ -416,19 +417,30 @@ YUI().use('myMod', function (Y) {
     </ul>
 </div>
 <div class="step component-details" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="html-component">
-    <ul style="padding:490px 0 0 110px; font-size:.5em;">
+    <ul style="padding:490px 0 0 50px; font-size:.5em;">
         <li>Client-Side Logic</li>
     </ul>
 </div>
 <div class="step component-details" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="html-component">
-    <ul style="padding:490px 0 0 110px; font-size:.5em;">
+    <ul style="padding:490px 0 0 50px; font-size:.5em;">
         <li style="visibility:hidden;">Server-Side Logic</li>
         <li>Rich Interaction... Flare</li>
     </ul>
 </div>
 <div class="step component-details" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="html-component">
-    <ul style="padding:490px 0 0 620px; font-size:.5em;">
+    <ul style="padding:490px 0 0 400px; font-size:.5em;">
         <li>Styles</li>
+    </ul>
+</div>
+<div class="step component-details" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="html-component">
+    <ul style="padding:490px 0 0 720px; font-size:.5em;">
+        <li>Manages JS/CSS Location</li>
+    </ul>
+</div>
+<div class="step component-details" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-28120" data-group="html-component">
+    <ul style="padding:490px 0 0 720px; font-size:.5em;">
+        <li style="visibility:hidden;">Manages JS/CSS Location</li>
+        <li>Manages JS/CSS Dependencies</li>
     </ul>
 </div>
 
@@ -436,32 +448,32 @@ YUI().use('myMod', function (Y) {
     <div style="border-right:1px solid gray; width: 950px;">
         <div style="padding:0 0 75px 250px;"><img src="images/yuilogo.png" style="width:200px;" /></div>
         <p>greeter.js</p>
-        <textarea id="yuiIntegrationExampleJs" data-lineNumbers="true">YUI.add('greeter', function (Y) {
-            Y.greet = function (cfg) {
-            alert("Hello " + cfg.name);
-            };
-            });</textarea>
+        <textarea id="yuiIntegrationExampleJs" data-lineNumbers="true">YUI.add('greeter', function (Y) 
+  Y.greet = function (cfg) {
+    alert("Hello " + cfg.name);
+  };
+});</textarea>
         <p>greeter.css</p>
         <textarea id="yuiIntegrationExampleCss" data-lineNumbers="true" data-runnable="true">...test</textarea>
         <p>app.html</p>
         <textarea id="yuiIntegrationExampleHtml" data-lineNumbers="true" data-runnable="true"><button></button>
-            &lt;script&gt;
-            YUI({
-            groups: {
-            custom: {
-            modules:  {
-            'greeter': {
+&lt;script&gt;
+  YUI({
+    groups: {
+      custom: {
+        modules:  {
+          'greeter': {
             fullpath: 'greeter.js'
-            }
-            }
-            }
-            }
-            }).use('greeter', function (Y) {
-            Y.greet({
-            name: 'World'
-            });
-            })
-            &lt;/script&gt;</textarea>
+          }
+        }
+      }
+    }
+  }).use('greeter', function (Y) {
+    Y.greet({
+      name: 'World'
+    });
+  })
+&lt;/script&gt;</textarea>
     </div>
 </div>
 <div class="step showAfter" data-scale="1.1" data-rotate="-180" data-x="-22710" data-y="-28120" data-callback="pres.next();">
@@ -496,7 +508,7 @@ YUI().use('myMod', function (Y) {
                 <img src="images/components/xml.png" style="padding-left:234px; width:125px;" />
                 <textarea id="wicketIntegrationExampleXml" style="display:none;"></textarea>
             </div>
-            <div style="display:inline-block; vertical-align:top; margin-top:-1px; height:448px; width:593px; border-top:1px solid gray; border-left:1px solid gray;">
+            <div style="display:inline-block; vertical-align:top; margin-top:-1px; height:448px; width:593px; background: #F7F7F7;">
                 <img src="images/components/infra.png" style="padding-left:234px; width:125px;" />
                 <textarea id="wicketIntegrationExampleInfra" style="display:none;"></textarea>
             </div>
@@ -504,31 +516,37 @@ YUI().use('myMod', function (Y) {
     </div>
 </div>
 <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500"></div>
-<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="highlight(cmYuiIntegrationExampleJs, {line:0,ch:0},{line:4,ch:2});"></div>
+<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="highlight(cmYuiIntegrationExampleJs, {line:0,ch:0},{line:4,ch:0});"></div>
 <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="yuiIntegrationExampleJsMove()"></div>
 <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="highlight(cmYuiIntegrationExampleCss, {line:0,ch:0},{line:0,ch:0});"></div>
 <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="yuiIntegrationExampleCssMove()"></div>
 <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="highlight(cmYuiIntegrationExampleHtml, {line:0,ch:0},{line:0,ch:0});"></div>
 <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="yuiIntegrationExampleHtmlMove()"></div>
-<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="highlight(cmYuiIntegrationExampleHtml, {line:13,ch:7},{line:15,ch:10});"></div>
-<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="yuiIntegrationExampleJavaMove()"></div>
-<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="highlight(cmYuiIntegrationExampleHtml, {line:5,ch:16},{line:9,ch:0});"></div>
+<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="highlight(cmYuiIntegrationExampleHtml, {line:5,ch:0},{line:9,ch:0});"></div>
 <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="yuiIntegrationExampleXmlMove()"></div>
-<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="highlight(cmYuiIntegrationExampleHtml, {line:2,ch:4},{line:4,ch:0});
+<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="highlight(cmYuiIntegrationExampleHtml, {line:13,ch:0},{line:15,ch:0});"></div>
+<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="yuiIntegrationExampleJavaMove()"></div>
+<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="highlight(cmYuiIntegrationExampleHtml, {line:2,ch:0},{line:4,ch:0});
         highlight(cmYuiIntegrationExampleHtml, {line:10,ch:0},{line:12,ch:0}, true); highlight(cmYuiIntegrationExampleHtml, {line:16,ch:0},{line:16,ch:0}, true);"></div>
 <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500" data-callback="yuiIntegrationExampleInfrastructureMove()"></div>
-<div class="step demo hidden" data-scale=".05" data-rotate="-180" data-x="-22500" data-y="-28180">
-
-</div>
-<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500"></div>
 <div class="step demo hidden" data-scale=".03" data-rotate="-180" data-x="-22500" data-y="-28850">
 
 </div>
 <div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500"></div>
+<div class="step demo hidden" data-scale=".05" data-rotate="-180" data-x="-22500" data-y="-28180">
+
+</div>
+<div class="step" data-scale="2" data-rotate="-180" data-x="-22260" data-y="-28500"></div>
+<div class="step isolate hidden" data-scale="1" data-rotate="-90" data-x="-22260" data-y="-28500">
+    <h1>Review</h1>
+
+</div>
+
+
 
 
 <!-- BEGIN REFERENCE SECTION -->
-<div class="step isolate" data-scale="1" data-rotate="0" data-x="-22260" data-y="-28500">
+<div class="step isolate hidden" data-scale="1" data-rotate="0" data-x="-22260" data-y="-28500">
     <h1>References</h1>
 </div>
 
@@ -636,30 +654,15 @@ YUI().use('myMod', function (Y) {
     });
     var cmWicketIntegrationExampleJs = false;
     var yuiIntegrationExampleJsMove = function() {
-//        YUI.namespace('wicket.example.js').animation = false;
-//        if (!YUI.wicket.example.js.animation) {
-//            YUI().use('node', 'anim', function(Y) {
-//                var arrow = Y.one('#arrow1');
-//                arrow.removeClass('hidden');
-//                YUI.wicket.example.js.animation = new Y.Anim({
-//                    node: arrow,
-//                    to: {
-//                        x: 600,
-//                        y: 400
-//                    }
-//                });
-//            }
-//        }
-//        YUI.wicket.example.js.animation.run();
         if (!cmWicketIntegrationExampleJs) {
             cmWicketIntegrationExampleJs = CodeMirror.fromTextArea(document.getElementById('wicketIntegrationExampleJs'), {
                 lineNumbers: true,
                 readOnly: true,
                 mode: "javascript"
             });
-            cmWicketIntegrationExampleJs.setValue("YUI.add('greeter', function (Y) {\n    Y.greet = function (cfg) {\n        alert('Hello ' + cfg.name);\n    };\n});");
+            cmWicketIntegrationExampleJs.setValue("YUI.add('greeter', function (Y) {\n  Y.greet = function (cfg) {\n    alert('Hello ' + cfg.name);\n  };\n});");
         }
-
+        highlight(cmWicketIntegrationExampleJs, {line:0,ch:0},{line:4,ch:0}, true);
     };
     var cmWicketIntegrationExampleCss = false;
     var yuiIntegrationExampleCssMove = function() {
@@ -671,7 +674,7 @@ YUI().use('myMod', function (Y) {
             });
             cmWicketIntegrationExampleCss.setValue("...test");
         }
-
+        highlight(cmWicketIntegrationExampleCss, {line:0,ch:0},{line:0,ch:0}, true);
     };
     var cmWicketIntegrationExampleHtml = false;
     var yuiIntegrationExampleHtmlMove = function() {
@@ -683,7 +686,7 @@ YUI().use('myMod', function (Y) {
             });
             cmWicketIntegrationExampleHtml.setValue("<button></button>");
         }
-
+        highlight(cmWicketIntegrationExampleHtml, {line:0,ch:0},{line:0,ch:0}, true);
     };
     var cmWicketIntegrationExampleJava = false;
     var yuiIntegrationExampleJavaMove = function() {
@@ -693,9 +696,9 @@ YUI().use('myMod', function (Y) {
                 readOnly: true,
                 mode: "text/x-java"
             });
-            cmWicketIntegrationExampleJava.setValue("Y.greet({\n    name: 'World'\n});");
+            cmWicketIntegrationExampleJava.setValue("Y.greet({\n  name: 'World'\n});");
         }
-
+        highlight(cmWicketIntegrationExampleJava, {line:0,ch:0},{line:2,ch:0}, true);
     };
     var cmWicketIntegrationExampleXml = false;
     var yuiIntegrationExampleXmlMove = function() {
@@ -705,9 +708,9 @@ YUI().use('myMod', function (Y) {
                 readOnly: true,
                 mode: "javascript"
             });
-            cmWicketIntegrationExampleXml.setValue("modules: {\n    'greeter': {\n        fullpath: 'greeter.js'\n    }\n}");
+            cmWicketIntegrationExampleXml.setValue("modules: {\n  'greeter': {\n    fullpath: 'greeter.js'\n  }\n}");
         }
-
+        highlight(cmWicketIntegrationExampleXml, {line:0,ch:0},{line:4,ch:0}, true);
     };
     var cmWicketIntegrationExampleInfra = false;
     var yuiIntegrationExampleInfrastructureMove = function() {
@@ -717,9 +720,9 @@ YUI().use('myMod', function (Y) {
                 readOnly: true,
                 mode: "text/x-java"
             });
-            cmWicketIntegrationExampleInfra.setValue("YUI({\n    groups: {\n        custom: {\n            ...\n        }\n    }\n}).use('greeter', function(Y) {\n    ...\n})");
+            cmWicketIntegrationExampleInfra.setValue("YUI({\n  groups: {\n    custom: {\n      ...\n    }\n  }\n}).use('greeter', function(Y) {\n  ...\n})");
         }
-
+        highlight(cmWicketIntegrationExampleInfra, {line:0,ch:0},{line:8,ch:0}, true);
     };
 
     var pres = impress();

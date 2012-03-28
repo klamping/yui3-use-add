@@ -50,6 +50,12 @@ h1 {
     font-size: 48px;
     -webkit-transition: opacity .7s ease-in;
 }
+.target {
+    -webkit-transition: opacity .7s ease-in;
+}
+.step.loading-example {
+    width: 1200px;
+}
 .step.hidden,
 .isolated .step {
 	opacity: 0;
@@ -63,7 +69,8 @@ h1 {
 .group-java-component .java-component,
 .group-html-component .html-component,
 .group-js-component .html-component,
-.group-css-component .html-component {
+.group-css-component .html-component,
+.group-yui-config .target-container {
     opacity: 0.5;
 }
 .group-component-overview #component-ex-base {
@@ -96,7 +103,8 @@ h1 {
 .group-java-component .java-component.active ~ .java-component, 
 .component-details.active ~ .component-details,
 .component-image.active ~ .component-details, 
-.step.active ~ .showAfter {
+.step.active ~ .showAfter,
+.target-container {
     opacity: 0;
 }
 

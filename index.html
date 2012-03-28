@@ -22,7 +22,7 @@
         <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser. Upcoming version 10 of Internet Explorer <i>should</i> also handle it.</p>
     </div>  -->
 
-    <div id="overview" class="step hidden" data-x="0" data-y="0" data-scale="40" data-rotate="0" data-z="100">
+    <div id="overview" class="step hidden" data-x="0" data-y="0" data-scale="40" data-rotate="0" data-z="1000">
         <img src="images/bg-tx.png" alt="" style="position: absolute; top: -300px;left: -250px;z-index:1;" width="1500" height="1000"/>
 
         <img src="images/tech-x-logo.png" alt="" style="position: absolute; top: -300px;left: -300px;z-index:2;"/>
@@ -39,7 +39,7 @@
         <img src="images/yuilogo.png" alt="YUI"/>
     </div>
 
-    <div id="yui-reason-1" class="step" data-x="-472" data-y="-218" data-scale="1" data-rotate="-22" data-group="yui-reasons">  <!-- who -->
+    <div id="yui-reason-1" class="step" data-x="-472" data-y="-218" data-scale="1" data-rotate="-22" data-group="yui-reasons" data-callback="document.getElementById('overview').style.display='none';">  <!-- who -->
         <span>Yahoo! User Interface Library - Version 3</span>
     </div>
 
@@ -55,13 +55,6 @@
         <span>Active Community</span>
     </div>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.arctext.js"></script>
-    <script>
-        $('#yui-reason-1 span').arctext({radius:890});
-        $('#yui-reason-2 span').arctext({radius:2100});
-        $('#yui-reason-3 span').arctext({radius:1700});
-        $('#yui-reason-4 span').arctext({radius:1300});
-    </script>
     <!-- End YUI reasons sections -->
 
 
@@ -302,31 +295,50 @@ YUI().use('myMod', function (Y) {
 </div>
 
 <!-- Start "Loading from a different file" -->
-<div class="step" data-scale="2" data-rotate="-180" data-x="-10070" data-y="-1800">
-    <p>greeter.js</p>
-    <textarea class="code" data-lineNumbers="true">YUI.add('greeter', function (Y) {
-    Y.greet = function (cfg) {
-        alert("Hello " + cfg.name);
+<div class="step loading-example" data-scale="2" data-rotate="-180" data-x="-13070" data-y="-1600" data-z="101">
+    <p>Greeter.js</p>
+    <textarea class="code" data-lineNumbers="true">YUI.add('Greeter_js', function (Y) {
+  Y.Greet = function (cfg) {
+     Y.one(cfg.srcNode).on('click', function (ev) {
+      "Hello " + cfg.name);
+    });
     };
-});</textarea>
+}, '1.0', {requires:['node', 'event', 'Greeter_css']});</textarea>
+</div>
+<div class="step loading-example" data-scale="2" data-rotate="-180" data-x="-13070" data-y="-2300" data-z="101">
+    <p>Greeter.css</p>
+    <textarea class="code" data-lineNumbers="true" data-mode="css">.target { font-size: bold; }</textarea>
 </div>
 
-<div class="step" data-scale="2" data-rotate="-180" data-x="-10070" data-y="-2500" data-group="yui-config" style="z-index:50000" data-z="10">
+<div class="step loading-example" data-scale="2" data-rotate="-180" data-x="-13070" data-y="-2600" data-group="yui-config" data-z="101">
     <p>app.html</p>
-    <textarea class="code" data-lineNumbers="true" data-runnable="true">YUI().use('greeter', function (Y) {
-    Y.greet({
+    <textarea class="code" data-lineNumbers="true" data-runnable="true" data-mode="text/html">&lt;button class="target"&gt;Hello TechX!&lt;/button&gt;
+&lt;script type="text/javascript" src="https://s.usaa.com/inet/resources/aggregator?type=-min&amp;p_/javascript/ent/thirdparty/yui/yui3_3/yui/yui.js&amp;p_/javascript/ent/thirdparty/yui/yui3_3/loader/loader.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  YUI().use('node', 'event', 'Greeter_js', function (Y) {
+    Y.Greet({
+      srcNode: '.target',
         name: 'World'
     });
-});</textarea>
+  });
+&lt;/script&gt;</textarea>
+</div>
+<div class="step target-container" data-scale="2" data-rotate="-180" data-x="-11600" data-y="-2700" data-rotate-y="-60" data-z="50" data-group="yui-config">
+    <button class="target btn">Greetings!</button>
 </div>
 
-<div class="step" data-scale="2" data-rotate="-180" data-x="-12000" data-y="-2500" data-group="yui-config" style="z-index:50000">
+<div class="step loading-example" data-scale="2" data-rotate="-180" data-x="-10500" data-y="-2600" data-group="yui-config" data-z="101" data-group="yui-config">
     <textarea class="code">{
     groups: {
         custom: {
             modules:  {
-                'greeter': {
-                     fullpath: 'greeter.js'
+        'Greeter_js': {
+          fullpath: 'Greeter.js',
+          requires: ['node', 'event', 'Greeter_css']
+        },
+        'Greeter_css': {
+          fullpath: 'Greeter.css',
+          type: 'css'
                 }
             }
         }
@@ -334,7 +346,9 @@ YUI().use('myMod', function (Y) {
 }</textarea>
 </div>
 
-<div class="step step-code" data-scale="2" data-rotate="-180" data-x="-10070" data-y="-2700" data-group="yui-config"></div>
+<div class="step step-code" data-scale="2.5" data-rotate="-180" data-x="-13100" data-y="-3150" data-group="yui-config"></div>
+
+<div class="step step-code" data-scale="2" data-rotate="-180" data-x="-11070" data-y="-2600" data-rotate-y="-70" data-group="yui-config"></div>
 
 <div id="thoughts-review-2" class="step isolate step-code" data-scale="22" data-rotate="-270" data-x="-14500" data-y="-10000"></div>
 
@@ -579,6 +593,7 @@ YUI().use('myMod', function (Y) {
 <script src="js/cm2/mode/javascript/javascript.js"></script>
 <script src="js/cm2/mode/htmlmixed/htmlmixed.js"></script>
 <script src="js/cm2/mode/clike/clike.js"></script>
+<script src="js/cm2/mode/css/css.js"></script>
 
 <script src="js/impress.js"></script>
 <script>
@@ -614,8 +629,9 @@ YUI().use('myMod', function (Y) {
     $('.code').each(function(i){
         var ln = this.dataset.linenumbers || false;
         var rn = this.dataset.runnable || false;
+        var md = this.dataset.mode || 'javascript';
         var cm = CodeMirror.fromTextArea(this, {
-            mode: "javascript",
+            mode: md,
             lineNumbers: ln,
             onKeyEvent: function(cm, ev){
                 ev.stopPropagation();
@@ -627,7 +643,15 @@ YUI().use('myMod', function (Y) {
             btn.innerHTML = "Run";
             btn.className = "btn btn-execute";
             btn.addEventListener("click", function() {
+                if (md === "javascript") {
                 window.eval(cm.getValue());
+                } else if (md === "text/html") {
+                    window.html = cm.getValue();
+                    var start = html.lastIndexOf('<script');
+                    var end = html.lastIndexOf('/script>');
+                    var js = html.substring(start+8,end-2);
+                    window.eval(js);
+                }
             });
             this.parentNode.appendChild(btn);
 
@@ -728,7 +752,13 @@ YUI().use('myMod', function (Y) {
     var pres = impress();
 </script>
 
-
+<script type="text/javascript" src="js/jquery.arctext.js"></script>
+<script>
+    $('#yui-reason-1 span').arctext({radius:890});
+    $('#yui-reason-2 span').arctext({radius:2100});
+    $('#yui-reason-3 span').arctext({radius:1700});
+    $('#yui-reason-4 span').arctext({radius:1300});
+</script>
 
 </div>
 </body>

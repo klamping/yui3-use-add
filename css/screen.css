@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -66,6 +67,8 @@ h1 {
 .group-yui-reasons .yui-reasons,
 .step-thoughts-review .thought,
 .step-thoughts-review-2 .thought,
+.step-thoughts-review-3 .thought,
+.step-thoughts-review-4 .thought,
 .group-java-component .java-component,
 .group-html-component .html-component,
 .group-js-component .html-component,
@@ -86,7 +89,8 @@ h1 {
 .group-yui-try-add .yui-try-add,
 .step-thoughts-review #first-thought,
 .step-thoughts-review-2 #second-thought,
-.step-thoughts-review-2 #third-thought,
+.step-thoughts-review-3 #third-thought,
+.step-thoughts-review-4 #fourth-thought, 
 .group-yui-loader-overview #yui-loader-overview,
 #component-ex-base.step.active,
 .group-java-component .component-image,

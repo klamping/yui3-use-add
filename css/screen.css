@@ -50,15 +50,12 @@ h1 {
     font-size: 48px;
     -webkit-transition: opacity .7s ease-in;
 }
-<<<<<<< HEAD
 .target {
     -webkit-transition: opacity .7s ease-in;
 }
 .step.loading-example {
     width: 1200px;
 }
-=======
->>>>>>> dd38746eec224ffd08196eca602cb2e4c8407674
 .step.hidden,
 .isolated .step {
 	opacity: 0;
@@ -72,12 +69,8 @@ h1 {
 .group-java-component .java-component,
 .group-html-component .html-component,
 .group-js-component .html-component,
-<<<<<<< HEAD
 .group-css-component .html-component,
 .group-yui-config .target-container {
-=======
-.group-css-component .html-component {
->>>>>>> dd38746eec224ffd08196eca602cb2e4c8407674
     opacity: 0.5;
 }
 .group-component-overview #component-ex-base {
@@ -110,12 +103,8 @@ h1 {
 .group-java-component .java-component.active ~ .java-component, 
 .component-details.active ~ .component-details,
 .component-image.active ~ .component-details, 
-<<<<<<< HEAD
 .step.active ~ .showAfter,
 .target-container {
-=======
-.step.active ~ .showAfter {
->>>>>>> dd38746eec224ffd08196eca602cb2e4c8407674
     opacity: 0;
 }
 

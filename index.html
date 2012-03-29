@@ -59,7 +59,7 @@
 
 
     <!-- Begin First Example -->
-    <div id="demo-1" class="step demo isolate" data-scale="5" data-rotate="0" data-x="-5000" data-y="-1140">
+    <div id="demo-1" class="step demo isolate" data-scale="5" data-rotate="0" data-x="-5000" data-y="-1140" style="z-index:10000">
         <button id="target-hello" class="btn">Hello TechX!</button>
     </div>
 
@@ -202,14 +202,14 @@
     });
 });</textarea></div>
 
-    <div class="step" data-scale="1.5" data-rotate="0" data-x="-7100" data-y="100" data-group="yui-review" data-callback="highlight(cmYui, {line:0,ch:0},{line:0,ch:5});">
+    <div class="step" data-scale="2" data-rotate="0" data-x="-7100" data-y="100" data-group="yui-review" data-callback="highlight(cmYui, {line:0,ch:0},{line:0,ch:5});">
     </div>
 
-    <div class="step" data-scale="1.5" data-rotate="0" data-x="-6700" data-y="100" data-group="yui-review" data-callback="highlight(cmYui, {line:0,ch:6},{line:0,ch: 9});">
+    <div class="step" data-scale="2" data-rotate="0" data-x="-6700" data-y="100" data-group="yui-review" data-callback="highlight(cmYui, {line:0,ch:6},{line:0,ch: 9});">
     </div>
-    <div class="step" data-scale="2" data-rotate="0" data-x="-5800" data-y="100" data-group="yui-review" data-callback="highlight(cmYui, {line:0,ch:10},{line:0,ch: 25});">
+    <div class="step" data-scale="2.5" data-rotate="0" data-x="-5800" data-y="100" data-group="yui-review" data-callback="highlight(cmYui, {line:0,ch:10},{line:0,ch: 25});">
     </div>
-    <div class="step" data-scale="1.5" data-rotate="0" data-x="-4300" data-y="100" data-group="yui-review" data-callback="highlight(cmYui, {line:0,ch:27},{line:0,ch: 39});">
+    <div class="step" data-scale="2" data-rotate="0" data-x="-4300" data-y="100" data-group="yui-review" data-callback="highlight(cmYui, {line:0,ch:27},{line:0,ch: 39});">
     </div>
     <div class="step" data-scale="3" data-rotate="0" data-x="-5400" data-y="200" data-group="yui-review" data-callback="highlight(cmYui, {line:1,ch:4},{line:1,ch: 39});">
     </div>
@@ -287,7 +287,7 @@
 <!-- End module writing -->
 
 <div class="step hidden" data-scale="10" data-rotate="-270" data-x="-9970" data-y="2000" data-group="yui-try-add" data-rotate-x="180">
-    <h1>Let's try it!</h1>
+    <h1 style="margin:0">Let's try it!</h1>
 </div>
 <div class="step hidden" data-scale="10" data-rotate="-270" data-x="-11000" data-y="2000" data-group="yui-try-add" data-rotate-x="180">
     <textarea class="code" data-lineNumbers="true" data-runnable="true">YUI.add('myMod', function (Y) {
@@ -300,7 +300,7 @@ YUI().use('myMod', function (Y) {
 
 <!-- Start "Loading from a different file" -->
 <div class="step loading-example" data-scale="2" data-rotate="-180" data-x="-13070" data-y="-1600" data-z="101">
-    <p>Greeter.js</p>
+    <p style="margin:0;">Greeter.js</p>
     <textarea class="code" data-lineNumbers="true">YUI.add('Greeter_js', function (Y) {
   Y.Greet = function (cfg) {
      Y.one(cfg.srcNode).on('click', function (ev) {
@@ -310,32 +310,32 @@ YUI().use('myMod', function (Y) {
 }, '1.0', {requires:['node', 'event', 'Greeter_css']});</textarea>
 </div>
 <div class="step loading-example" data-scale="2" data-rotate="-180" data-x="-13070" data-y="-2300" data-z="101">
-    <p>Greeter.css</p>
+    <p style="margin:0;">Greeter.css</p>
     <textarea class="code" data-lineNumbers="true" data-mode="css">.target { font-size: bold; }</textarea>
 </div>
 
 <div class="step loading-example" data-scale="2" data-rotate="-180" data-x="-13070" data-y="-2600" data-group="yui-config" data-z="101">
-    <p>app.html</p>
+    <p style="margin:0;">app.html</p>
     <textarea class="code" data-lineNumbers="true" data-runnable="true" data-mode="text/html">&lt;button class="target"&gt;Hello TechX!&lt;/button&gt;
 &lt;script type="text/javascript" src="https://s.usaa.com/inet/resources/aggregator?type=-min&amp;p_/javascript/ent/thirdparty/yui/yui3_3/yui/yui.js&amp;p_/javascript/ent/thirdparty/yui/yui3_3/loader/loader.js"&gt;&lt;/script&gt;
 &lt;script&gt;
   YUI().use('node', 'event', 'Greeter_js', function (Y) {
     Y.Greet({
       srcNode: '.target',
-        name: 'World'
+      name: 'World'
     });
   });
 &lt;/script&gt;</textarea>
 </div>
-<div class="step target-container" data-scale="2" data-rotate="-180" data-x="-11600" data-y="-2700" data-rotate-y="-60" data-z="50" data-group="yui-config">
+<div class="step target-container" data-scale="2" data-rotate="-180" data-x="-11600" data-y="-2600" data-rotate-y="-60" data-z="50" data-group="yui-config">
     <button class="target btn">Greetings!</button>
 </div>
 
 <div class="step loading-example" data-scale="2" data-rotate="-180" data-x="-10500" data-y="-2600" data-group="yui-config" data-z="101" data-group="yui-config">
     <textarea class="code">{
-    groups: {
-        custom: {
-            modules:  {
+  groups: {
+    custom: {
+      modules:  {
         'Greeter_js': {
           fullpath: 'Greeter.js',
           requires: ['node', 'event', 'Greeter_css']
@@ -343,16 +343,16 @@ YUI().use('myMod', function (Y) {
         'Greeter_css': {
           fullpath: 'Greeter.css',
           type: 'css'
-                }
-            }
         }
+      }
     }
+  }
 }</textarea>
 </div>
 
 <div class="step step-code" data-scale="2.5" data-rotate="-180" data-x="-13100" data-y="-3150" data-group="yui-config"></div>
 
-<div class="step step-code" data-scale="2" data-rotate="-180" data-x="-11070" data-y="-2600" data-rotate-y="-70" data-group="yui-config"></div>
+<div class="step step-code" data-scale="2" data-rotate="-180" data-x="-11600" data-y="-2600" data-rotate-y="-60" data-group="yui-config"></div>
 
 <!-- BEGIN WICKET SECTION -->
 <div id="thoughts-review-2" class="step isolate" data-scale="22" data-rotate="-270" data-x="-14500" data-y="-10000"></div>

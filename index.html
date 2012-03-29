@@ -361,7 +361,7 @@ YUI().use('myMod', function (Y) {
     <img src="images/apache-wicket.png" style="height:500px; width:500px;"/>
 </div>
 <div class="step center hidden" data-scale="1" data-rotate="-90" data-x="-20600" data-y="-20800" data-group="wicket">
-    <p style="padding-top:480px; font-weight:bold;font-size:1.4em;">Makes Building Applications Easy!</p>
+    <p style="padding-top:370px; font-weight:bold;font-size:1.4em;">Makes Building Applications Easy!</p>
 </div>
 <div id="component-ex-base" class="step demo isolate hidden" data-scale="13" data-rotate="0" data-x="-19700" data-y="-20800" data-group="component-overview">
     <img src="images/components/whole_page.png" style="height:102%; width:102%;" />
@@ -375,8 +375,15 @@ YUI().use('myMod', function (Y) {
 <div class="step demo isolate hidden" data-scale="8" data-rotate="0" data-x="-16625" data-y="-23400" data-group="component-overview">
     <img src="images/components/component3.png" style="width:74%;" />
 </div>
+<div id="thoughts-review-3" class="step isolate" data-scale="22" data-rotate="-270" data-x="-14500" data-y="-10000"></div>
 <div class="step demo isolate hidden" data-scale="13" data-rotate="0" data-x="-19700" data-y="-20800" data-group="component-overview-final">
     <img src="images/components/whole_page_edit.png" style="height:102%; width:102%;" />
+</div>
+<div id="wicketQuestion" class="step demo isolate hidden" data-scale="13" data-rotate="0" data-x="-19700" data-y="-20800" data-group="wicket-question">
+    <p style="font-weight:bold;font-size:1.4em;">Besides those provided by Wicket,<br /> Where else can I find a list of reusable components at USAA?</p>
+</div>
+<div class="step demo isolate hidden" data-scale="13" data-rotate="0" data-x="-19700" data-y="-19000" data-group="wicket-question">
+    <img src="https://statmcstg.usaa.com/mcontent/static_assets/Media/refApp-mainHeader.gif" style="padding-top:350px; width:300px;" />
 </div>
 <div class="step center" data-scale="1" data-rotate="-180" data-x="-19700" data-y="-27950" data-group="component-details">
     <p style="font-weight:bold; color:orange;">So, what exactly makes a Component?</p>
@@ -473,7 +480,7 @@ YUI().use('myMod', function (Y) {
 <div class="step showAfter" data-scale="1" data-rotate="-180" data-x="-21700" data-y="-28120" data-callback="pres.next();">
     <div style="border-right:1px solid gray; width: 950px;">
         <div style="padding:0 0 30px 250px;"><img src="images/yuilogo.png" style="width:200px;" /></div>
-        <p>Greeter.js</p>
+        <p style="margin:0;">Greeter.js</p>
         <textarea id="yuiIntegrationExampleJs" data-lineNumbers="true">YUI.add('Greeter_js', function (Y) 
   Y.Greet = function (cfg) {
     Y.one(cfg.srcNode).on('click',function(ev){
@@ -483,9 +490,9 @@ YUI().use('myMod', function (Y) {
 },
 '1.0',
 {requires:['node', 'event', 'Greeter_css']});</textarea>
-        <p>Greeter.css</p>
+        <p style="margin:0;">Greeter.css</p>
         <textarea id="yuiIntegrationExampleCss" data-lineNumbers="true" data-runnable="true">.target { font-size: bold; }</textarea>
-        <p>Page.html</p>
+        <p style="margin:0;">Page.html</p>
         <textarea id="yuiIntegrationExampleHtml" data-lineNumbers="true" data-runnable="true"><button class="target">Hello TechX!</button>
 &lt;script&gt;
   YUI({

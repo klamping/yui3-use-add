@@ -70,6 +70,7 @@ h1 {
 .step-thoughts-review-2 .thought,
 .step-thoughts-review-3 .thought,
 .step-thoughts-review-4 .thought,
+.group-wicket-question #wicketQuestion,
 .group-java-component .java-component,
 .group-html-component .html-component,
 .group-js-component .html-component,
@@ -98,6 +99,7 @@ h1 {
 .group-html-component .component-image,
 .group-js-component .component-image,
 .group-css-component .component-image,
+#wicketQuestion.active,
 .showAfter {
 	opacity: 1;
 }

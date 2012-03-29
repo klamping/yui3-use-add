@@ -58,7 +58,8 @@ h1 {
     width: 1200px;
 }
 .step.hidden,
-.isolated .step {
+.isolated .step,
+.group-yui-config .thought {
 	opacity: 0;
 }
 .group-yui-review-highlight #yui-ex-1-base {
@@ -226,6 +227,10 @@ h1 {
         0px 1px 0px rgba(255,255,255,0.3);
     display: inline-block;
 }
+    .object-graph ol {
+        margin: 0;
+        padding: 0;
+    }
     .object-graph li {
         list-style: none;
         border-bottom: 1px solid #fff;
